@@ -38,4 +38,13 @@ class LoginController extends Controller
 
         return redirect()->route('login');
     }
+
+    public function edit(User $user)
+    {
+        return Inertia::render('Users/Edit', [
+            'name' => 'name',
+            'email' => 'email',
+            'password' => 'password'
+        ]);
+    }
 }

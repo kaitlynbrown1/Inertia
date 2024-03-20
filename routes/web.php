@@ -51,6 +51,15 @@ Route::middleware('auth')->group(function () {
         return redirect('/users');
     });
 
+
+
+    Route::get('/users/edit', function () {
+        return Inertia::render('Users/Edit');
+    })->can('edit', 'App\Models\User');
+
+
+
+
     Route::get('/settings', function () {
         return Inertia::render('Settings');
     });
